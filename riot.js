@@ -2647,6 +2647,6 @@ exports.mixin = mixin$$1;
 exports.update = update$2;
 exports.unregister = unregister$$1;
 
-Object.defineProperty(exports, '__esModule', { value: true });
+// Object.defineProperty(exports, '__esModule', { value: true });
 
 })));

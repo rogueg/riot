@@ -12,6 +12,10 @@ module.exports = {
       include: 'node_modules/**',
       ignoreGlobal: true
     }),
-    buble()
+    buble({
+      transforms: {
+        dangerousForOf: true
+      }
+    })
   ]
 }

@@ -41,7 +41,7 @@ tags:
 
 test-karma:
   # Test riot+compiler.js
-	@ TEST_FOLDER=compiler $(KARMA) start test/karma.conf.js
+	# @ TEST_FOLDER=compiler $(KARMA) start test/karma.conf.js
 	# Test only riot.js and generate the coverage
 	@ TEST_FOLDER=browser $(KARMA) start test/karma.conf.js
 
@@ -65,9 +65,9 @@ raw:
 	@ mkdir -p $(DIST)
 	# Default builds UMD
 	@ $(ROLLUP) lib/riot.js --config $(CONFIG)rollup.config.js > $(DIST)riot.js
-	@ $(ROLLUP) lib/riot+compiler.js --config $(CONFIG)rollup.config.js > $(DIST)riot+compiler.js
+	# @ $(ROLLUP) lib/riot+compiler.js --config $(CONFIG)rollup.config.js > $(DIST)riot+compiler.js
 	# Chrome Security Policy build
-	@ $(ROLLUP) lib/riot.js --config $(CONFIG)rollup.config.csp.js > $(DIST)riot.csp.js
+	# @ $(ROLLUP) lib/riot.js --config $(CONFIG)rollup.config.csp.js > $(DIST)riot.csp.js
 
 clean:
 	# clean $(DIST)
@@ -88,8 +88,8 @@ min:
 
 perf: riot
 	# run the performance tests
-	@ node test/performance/benchmarks ../riot.2.2.0 --expose-gc
-	@ node test/performance/benchmarks ../riot.2.6.1 --expose-gc
+	# @ node test/performance/benchmarks ../riot.2.6.1 --expose-gc
+	# @ node test/performance/benchmarks ../../../riot --expose-gc
 	@ node test/performance/benchmarks ../../../dist/riot/riot --expose-gc
 
 perf-leaks: riot
@@ -98,7 +98,7 @@ perf-leaks: riot
 
 watch:
 	# watch and rebuild riot and its testswatch:
-	@ $(CHOKIDAR) lib -c 'make raw & make tags'
+	@ $(CHOKIDAR) lib -c 'make raw'
 
 build:
 	# generate riot.js & riot.min.js

@@ -17,10 +17,10 @@ const
 console.log(`Testing: ${ riotPath }`)
 
 // brand new
-ifBench(suite, 'if', riot)
+// ifBench(suite, 'if', riot)
 loopBench(suite, 'loop', riot)
-if (!/2.2/.test(riotPath)) loopNoReorderBench(suite, 'loop-no-reorder', riot)
-mountBench(suite, 'mount', riot)
+// if (!/2.2/.test(riotPath)) loopNoReorderBench(suite, 'loop-no-reorder', riot)
+// mountBench(suite, 'mount', riot)
 
 suite
   .on('cycle', function(event) {
